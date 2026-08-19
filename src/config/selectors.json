@@ -1,0 +1,36 @@
+{
+  "card": "article.comic-card",
+  "title": [
+    "h2.comic-title"
+  ],
+  "cover": [
+    "img"
+  ],
+  "link": [
+    "a.block"
+  ],
+  "author": [],
+  "artist": [],
+  "status": [
+    "span.status-badge"
+  ],
+  "synopsis": [
+    "p.text-sm"
+  ],
+  "genres": [
+    "[class*='genre'] a",
+    "a[href*='genre']"
+  ],
+  "chapter": "a.chap-cell",
+  "chapterUrl": "",
+  "chapterNumber": [],
+  "chapterTitle": [],
+  "pages": [
+    "div.reader-page img"
+  ],
+  "popularUrl": "https://wurmz.net/?page={page}&limit={limit}",
+  "latestUrl": "https://wurmz.net/?sort=latest&page={page}&limit={limit}",
+  "searchUrl": "https://wurmz.net/?s={q}",
+  "detailUrl": "",
+  "readerUrl": ""
+}

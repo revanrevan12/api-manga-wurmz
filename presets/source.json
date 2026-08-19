@@ -1,10 +1,10 @@
 {
   "name": "Wurmz",
   "version": "1.0.0",
-  "createdAt": "2026-08-19T09:48:44.956Z",
-  "lastVerified": "2026-08-19T09:48:44.956Z",
+  "createdAt": "2026-08-19T15:29:16.289Z",
+  "lastVerified": "2026-08-19T15:29:16.289Z",
   "baseUrl": "https://wurmz.net",
-  "generatedAt": "2026-08-19T09:48:44.956Z",
+  "generatedAt": "2026-08-19T15:29:16.289Z",
   "generator": "MANGA FASE 4",
   "endpoints": [
     "/api/health",
@@ -55,7 +55,7 @@
   },
   "sampleUrls": [],
   "health": {
-    "lastCheck": "2026-08-19T09:48:44.956Z",
+    "lastCheck": "2026-08-19T15:29:16.289Z",
     "status": "healthy",
     "fields": {}
   }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manga Reader — api-manga-wurmz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="manga-reader"></div>
+
+  <script type="module">
+    import MangaAPIClient from './client.js'
+    import MangaReader from './reader.js'
+    import BookmarkManager from './bookmarkManager.js'
+
+    // Point this at the deployed API base URL.
+    const API_URL = 'https://your-api-host.example.com'
+
+    const apiClient = new MangaAPIClient(API_URL)
+    const bookmarks = new BookmarkManager()
+
+    // Render the reader for a chapter slug (replace with a real slug).
+    const reader = new MangaReader('manga-reader', apiClient, 'chapter-1')
+
+    // Example: record reading history.
+    const manga = { slug: 'manga-slug', title: 'Manga Title', cover: 'https://example.com/cover.jpg' }
+    const chapter = { slug: 'chapter-1', title: 'Chapter 1' }
+    bookmarks.addToHistory(manga, chapter)
+
+    // Example: list popular manga.
+    apiClient.getPopular(1, 20).then((res) => {
+      console.log('Popular manga:', res.data)
+    }).catch((err) => console.error(err))
+  </script>
+</body>
+</html>

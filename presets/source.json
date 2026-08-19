@@ -1,0 +1,62 @@
+{
+  "name": "Wurmz",
+  "version": "1.0.0",
+  "createdAt": "2026-08-19T09:48:44.956Z",
+  "lastVerified": "2026-08-19T09:48:44.956Z",
+  "baseUrl": "https://wurmz.net",
+  "generatedAt": "2026-08-19T09:48:44.956Z",
+  "generator": "MANGA FASE 4",
+  "endpoints": [
+    "/api/health",
+    "/api/popular",
+    "/api/latest",
+    "/api/search",
+    "/api/manga/:slug",
+    "/api/manga/:slug/chapters",
+    "/api/chapter/:slug",
+    "/api/chapter/:slug/pages",
+    "/api/img"
+  ],
+  "selectors": {
+    "card": "article.comic-card",
+    "title": [
+      "h2.comic-title"
+    ],
+    "cover": [
+      "img"
+    ],
+    "link": [
+      "a.block"
+    ],
+    "author": [],
+    "artist": [],
+    "status": [
+      "span.status-badge"
+    ],
+    "synopsis": [
+      "p.text-sm"
+    ],
+    "genres": [
+      "[class*='genre'] a",
+      "a[href*='genre']"
+    ],
+    "chapter": "a.chap-cell",
+    "chapterUrl": "",
+    "chapterNumber": [],
+    "chapterTitle": [],
+    "pages": [
+      "div.reader-page img"
+    ],
+    "popularUrl": "https://wurmz.net/?page={page}&limit={limit}",
+    "latestUrl": "https://wurmz.net/?sort=latest&page={page}&limit={limit}",
+    "searchUrl": "https://wurmz.net/?s={q}",
+    "detailUrl": "",
+    "readerUrl": ""
+  },
+  "sampleUrls": [],
+  "health": {
+    "lastCheck": "2026-08-19T09:48:44.956Z",
+    "status": "healthy",
+    "fields": {}
+  }
+}

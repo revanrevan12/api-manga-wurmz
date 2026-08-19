@@ -1,0 +1,42 @@
+# Auto-Update workflow — FASE 3: self-healing + auto-commit.
+# Runs a health check on the source website, re-detects broken selectors,
+# commits the fix back to this repository, and sends a webhook notification
+# if a selector stays broken.
+name: Auto-Update Manga API
+
+on:
+  schedule:
+    # 00:00 WIB = 17:00 UTC the previous day
+    - cron: '0 17 * * *'
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Run health check & auto-commit
+        env:
+          SOURCE_URL: ${{ secrets.SOURCE_URL }}
+          SAMPLE_URLS: ${{ secrets.SAMPLE_URLS }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO: ${{ github.event.repository.name }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: node src/scripts/healthCheck.js
+      - name: Commit selector changes
+        if: success()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Manga API Auto-Update"
+          git add -A || true
+          git commit -m "auto: perbaiki selector $(date +%Y-%m-%d)" || true
+          git push || true

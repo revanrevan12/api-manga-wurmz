@@ -16,7 +16,7 @@ class ImageNormalizer {
       id: `page-${i + 1}`,
       number: i + 1,
       imageUrl: this.normalizeUrl(imageUrl),
-      source: 'Wurmz',
+      source: 'wurmz',
     }))
   }
 }

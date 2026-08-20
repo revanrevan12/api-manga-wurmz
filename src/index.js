@@ -21,7 +21,7 @@ app.use('/api', createRoutes())
 
 // Root health (outside /api prefix for quick checks)
 app.get('/health', (_req, res) => {
-  res.json({ status: true, message: 'Wurmz API is running', timestamp: new Date().toISOString() })
+  res.json({ status: true, message: 'wurmz API is running', timestamp: new Date().toISOString() })
 })
 
 // 404 handler
@@ -33,7 +33,7 @@ app.use((_req, res) => {
 app.use(errorHandler)
 
 app.listen(PORT, () => {
-  console.log(`[Wurmz] API running on port ${PORT}`)
+  console.log(`[wurmz] API running on port ${PORT}`)
 })
 
 export default app

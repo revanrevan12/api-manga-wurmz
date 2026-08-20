@@ -13,7 +13,7 @@ import config from '../config/config.js'
 // repaired selectors to GitHub, updates the preset + history, and sends a
 // webhook notification if a selector stays broken.
 async function runHealthCheck() {
-  console.log('Starting health check for', config.siteName || 'Wurmz')
+  console.log('Starting health check for', config.siteName || 'wurmz')
   try {
     const healthCheck = new HealthCheckService(config.baseUrl, config.selectors, config.sampleUrls)
     const result = await healthCheck.runHealthCheck()

@@ -1,7 +1,7 @@
 {
   "name": "api-manga-wurmz",
   "version": "1.0.0",
-  "description": "Auto-generated Manga API for Wurmz",
+  "description": "Auto-generated Manga API for wurmz",
   "main": "src/index.js",
   "type": "module",
   "scripts": {

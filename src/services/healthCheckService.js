@@ -25,7 +25,7 @@ class HealthCheckService {
       fields: {},
       failedFields: [],
       needsRedetection: false,
-      siteName: config.siteName || 'Wurmz',
+      siteName: config.siteName || 'wurmz',
     }
 
     // Resolve sample pages: index 0 = list, 1 = detail, 2 = reader.

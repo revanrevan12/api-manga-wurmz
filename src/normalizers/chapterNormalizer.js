@@ -19,7 +19,7 @@ class ChapterNormalizer {
       number: raw.number || 0,
       title: raw.title || '',
       url: this.normalizeUrl(raw.url),
-      source: 'wurmz',
+      source: 'Wurmz',
     }
   }
 

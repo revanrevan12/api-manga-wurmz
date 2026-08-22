@@ -23,7 +23,7 @@ class MangaNormalizer {
       synopsis: raw.synopsis || '',
       genres: Array.isArray(raw.genres) ? raw.genres : [],
       url: raw.url || null,
-      source: 'wurmz',
+      source: 'Wurmz',
       updatedAt: new Date().toISOString(),
     }
   }

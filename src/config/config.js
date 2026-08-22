@@ -7,7 +7,7 @@ const selectorsPath = path.join(__dirname, 'selectors.json')
 const selectors = JSON.parse(fs.readFileSync(selectorsPath, 'utf8'))
 
 const config = {
-  siteName: process.env.SITE_NAME || 'wurmz',
+  siteName: process.env.SITE_NAME || 'Wurmz',
   sourceSlug: 'wurmz',
   baseUrl: (process.env.SOURCE_URL || 'https://wurmz.net').replace(/\/+$/, ''),
   selectors,
